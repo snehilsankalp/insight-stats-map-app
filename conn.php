@@ -5,15 +5,19 @@
  * Date: 21-09-2018
  * Time: 21:36
  */
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "insight";
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = new mysqli($server, $username, $password, $db);
 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
 
 
 ?>
