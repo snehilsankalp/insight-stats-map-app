@@ -1,0 +1,102 @@
+body{
+	font-family: "arial" !important
+}
+#logo{
+	font-size: 45px;
+	font-family: "arial", Georgia, Serif;
+	font-weight:bold;
+	color: white;
+    text-shadow: 2px 2px 4px #000000;
+	margin:2%;
+	text-align: center;
+}
+.head3{
+	font-size:30px;
+	font-family: "arial", Georgia, Serif;
+	font-weight:100;
+	color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+#scndhead{
+	font-size:35px;
+	color:darkslateblue !important;
+	line-height:50px;
+	font-weight: 500;
+}
+.div1{
+	border-radius: 4px;
+	border: 1px #ddd solid;
+	background: rgba(237, 238, 239,0.35); 
+	-webkit-box-shadow: 1px 1px 5px 3px rgba(230,230,230,1);
+-moz-box-shadow: 1px 1px 5px 3px rgba(230,230,230,1);
+box-shadow: 1px 1px 5px 3px rgba(230,230,230,1);
+	padding:6%;
+	margin: 2% auto;
+}
+.next{
+	margin:auto 1%
+}
+.circle{
+	border-radius: 50%;
+    margin-top:-65px;
+	margin-right:9%;
+	margin-left: 8%;
+    padding:1% 2%;
+	font-size: 20px
+}
+.circle:hover{
+	background:lightgray;
+	color:black;
+}
+.div2{
+	margin:0% 30%
+}
+
+@media(max-width:767px) {
+#logo{
+	font-size:35px;
+	font-family: "arial", Georgia, Serif;
+	font-weight:bold;
+	color: white;
+    text-shadow: 2px 2px 4px #000000;
+	margin:2%;
+	text-align: center;
+}
+.head3{
+	font-size:20px;
+	font-family: "arial", Georgia, Serif;
+	font-weight:bold;
+	color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+#scndhead{
+	font-size:25px;
+	color:darkslateblue !important;
+	line-height:50px;
+	font-weight: 600;
+	text-align: center;
+}
+.div1{
+	border-radius: 4px;
+	border: 1px #ddd solid;
+	background: rgba(237, 238, 239,0.35); 
+	-webkit-box-shadow: 1px 1px 5px 3px rgba(230,230,230,1);
+-moz-box-shadow: 1px 1px 5px 3px rgba(230,230,230,1);
+box-shadow: 1px 1px 5px 3px rgba(230,230,230,1);
+	padding:6%;
+	margin:1%;
+}
+.next{margin:auto}
+.circle{
+	border-radius: 50%;
+    margin-top:-65px;
+	margin-right:7.5%;
+	margin-left:7.5%;
+    padding:1% 2%;
+	font-size: 20px
+	}
+	.div2{margin:1%}
+	.clearfix{
+		clear: both;
+	}
+}

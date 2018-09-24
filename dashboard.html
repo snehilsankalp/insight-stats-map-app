@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link href="css/sp.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        desklink{
+            color:#ffffff !important;
+        }
+        .desklink:hover{
+            color:#9E9FA1;
+        }
+        .desklink:active{
+            color:#170975;
+        }
+        .logo{
+            padding-top:0;
+            text-align: center;
+            margin-bottom: 2%;
+        }
+        .egypt{
+            display:none;
+        }
+        .hovegypt:hover ~ .egypt{
+            display:block;
+        }
+        .nig{
+            display:none;
+        }
+        .hovenig:hover ~ .nig{
+            display:block;
+        }
+        .gab{
+            display:none;
+        }
+        .hovegab:hover ~ .gab{
+            display:block;
+        }
+        .sa{
+            display:none;
+        }
+        .hovesa:hover ~ .sa{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="col-sm-2 sidepanel secretm">
+        <ol style="list-style: none;    -webkit-padding-start: 0px;">
+            <li class="logo"><img src="images/CAF_logo.png" style="height:100px;"></li>
+            <li class="li-menu active"><a href="#" class="desklink active"><i class="fa fa-th-large" aria-hidden="true"></i>  <b style="margin-left: 10px;"> Dashboard</b></a></li>
+            <a href="teams.php" class="desklink"> <li class="li-menu effect"><i class="fa fa-group" aria-hidden="true"></i> <b style="margin-left: 10px;">  Teams</b></li></a>
+            <a href="players.php" class="desklink"><li class="li-menu effect" style="margin-left: 4px"><i class="fa fa-child" aria-hidden="true"></i> <b style="margin-left: 10px;">  Fan Map</b></li></a>
+            <a href="#" class="desklink"><li class="li-menu effect" style="margin-left: 4px"><i class="fa fa-power-off" aria-hidden="true"></i> <b style="margin-left: 10px;">  Log Out</b></li></a>
+
+        </ol>
+
+    </div>
+     <div class="col-sm-10 pad-zero ">
+         <h3 style="margin-left: 5px;">Hosts & Winners</h3>
+        <div class="col-sm-2 teams hovegab">
+            <h5 style="color:#d21200">Gabon<i class="fa fa-map-marker" aria-hidden="true" style="float:right" ;></i></h5>
+            <h6 style="color:lightgrey"><span>Won : Cameroon</span><span style="float: right">2017</span></h6>
+
+        </div>
+        <div class="col-sm-2 teams hovenig">
+            <h5 style="color:#8ca2ff">Nigeria<i class="fa fa-map-marker" aria-hidden="true" style="float:right" ;></i></h5>
+            <h6 style="color:lightgrey"><span>Won : Ivory Coast</span><span style="float: right">2015</span></h6>
+        </div>
+        <div class="col-sm-2 teams hovesa">
+
+            <h5 style="color:#a50896">South Africa<i class="fa fa-map-marker" aria-hidden="true" style="float:right" ;></i></h5>
+            <h6 style="color:lightgrey"><span>Won : Nigeria</span><span style="float: right">2013</span></h6>
+        </div>
+        <div class="col-sm-2 teams hovegypt">
+            <h5 style="color:#ff9a0d">Egypt<i class="fa fa-map-marker" aria-hidden="true" style="float:right" ;></i></h5>
+            <h6 style="color:lightgrey"><span>Won : Zambia</span><span style="float: right">2012</span></h6>
+        </div>
+         <div class="col-sm-8" >
+             <div id='map' style=' height: 480px;'></div>
+         </div>
+         <div class="col-sm-4 gab">
+             <h3>Stadiums(Gabon)</h3>
+             <ol style="list-style: disc">
+                 <li>Stade d'Angondjé</li>
+                 <li>Stade de Franceville</li>
+                 <li>Nongo Stadium</li>
+             </ol>
+         </div>
+         <div class="col-sm-4 nig" >
+             <h3>Stadiums (Nigeria)</h3>
+             <ol style="list-style: disc">
+                 <li>Abuja Stadium</li>
+                 <li>Lagos National Stadium</li>
+                 <li>Adokiye Amiesimaka Stadium</li>
+                 <li>Muhammadu Dikko Stadium</li>
+                 <li>Godswill Akpabio International Stadium</li>
+                 <li>Jalingo City Stadium</li>
+                 <li>U. J. Esuene Stadium</li>
+                 <li>Obafemi Awolowo Stadium</li>
+                 <li>Stade Amahoro</li>
+             </ol>
+         </div>
+
+         <div class="col-sm-4 sa" >
+             <h3>Stadiums (South Africa)</h3>
+             <ol style="list-style: disc">
+                 <li>FNB Stadium</li>
+                 <li>CEllis Park Stadium</li>
+                 <li>Odi Stadium</li>
+                 <li>Moses Mabhida Stadium</li>
+                 <li>Kings Park Stadium</li>
+                 <li>Free State Stadium</li>
+                 <li>Orlando Stadium</li>
+                 <li>Johannesburg Stadium</li>
+                 <li>Wanderers Stadium</li>
+                 <li>Rand Stadium</li>
+
+             </ol>
+         </div>
+
+         <div class="col-sm-4 egypt" >
+             <h3>Stadiums (Egypt)</h3>
+             <ol style="list-style: disc">
+                 <li>Borg El Arab Stadium</li>
+                 <li>Cairo International Stadium</li>
+                 <li>Mubarak International Stadium</li>
+                 <li>Arab Contractors Stadium</li>
+                 <li>Bani Ebid Stadium</li>
+                 <li>Al-Salam Stadium</li>
+                 <li>30 June Stadium</li>
+
+             </ol>
+         </div>
+         <!--<div class="col-sm-4" style="margin-bottom: 0px;">-->
+             <!--<p>*Hover on the 4 panels to view the list of stadiums.<br>*Zoom the map to see the stadiums for each hosts.</p>-->
+
+         <!--</div>-->
+
+         <script>
+                 mapboxgl.accessToken = 'pk.eyJ1Ijoic25laGlsc2Fua2FscCIsImEiOiJjam1hNjBkcDgxNGhyM2tsa2dhazRtdjA0In0.qyAqw9Wm6RWJLRMaiX9-rg';
+                 var map = new mapboxgl.Map({
+                     container: 'map',
+                     style: 'mapbox://styles/mapbox/dark-v9',
+                     center: [24.09,0.66],
+                     zoom :2.158
+                 });
+
+                 map.on('load', function () {
+
+                     map.addLayer({
+                         "id": "points",
+                         "type": "symbol",
+                         "source": {
+                             "type": "geojson",
+                             "data": {
+                                 "type": "FeatureCollection",
+                                 "features": [{
+                                     "type": "Feature",
+                                     "geometry": {
+                                         "type": "Point",
+                                         "coordinates": [11.6, 0.8]
+                                     },
+                                     "properties": {
+                                         "title": "2017",
+                                         "description": "<strong>Teams Participated</strong><br>" +
+                                         "<ul style=\"list-style-type:disc\">\n" +
+                                         "  <li>Egypt</li>\n" +
+                                         "  <li>Cameroon</li>\n" +
+                                         "  <li>Ghana</li>\n" +
+                                         "  <li>Nigeria</li>\n" +
+                                         "  <li>Ivory Coast</li>\n" +
+                                         "  <li>Congo</li>\n" +
+                                         "  <li>Zambia</li>\n" +
+                                         "  <li>Tunisia</li>\n" +
+                                         "  <li>Sudan</li>\n" +
+                                         "  <li>Algeria</li>\n" +
+                                         "  <li>Ethiopia</li>\n" +
+                                         "</ul>  ",
+                                         "icon": "marker"
+                                     }
+                                 }, {
+                                     "type": "Feature",
+                                     "geometry": {
+                                         "type": "Point",
+                                         "coordinates": [9.6966, 9.9456]
+                                     },
+                                     "properties": {
+                                         "title": "2016",
+                                         "description": "<strong>Teams Participated</strong><br>" +
+                                         "<ul style=\"list-style-type:disc\">\n" +
+                                         "  <li>Egypt</li>\n" +
+                                         "  <li>Cameroon</li>\n" +
+                                         "  <li>Ghana</li>\n" +
+                                         "  <li>Nigeria</li>\n" +
+                                         "  <li>Ivory Coast</li>\n" +
+                                         "  <li>Congo</li>\n" +
+                                         "  <li>Zambia</li>\n" +
+                                         "  <li>Tunisia</li>\n" +
+                                         "  <li>Sudan</li>\n" +
+                                         "  <li>Algeria</li>\n" +
+                                         "  <li>Ethiopia</li>\n" +
+                                         "</ul>  ",
+                                         "icon": "marker"
+                                     }
+                                 },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates": [28.03, -26.19]
+                                         },
+                                         "properties": {
+                                             "title": "2013",
+                                             "description": "<strong>Teams Participated</strong><br>" +
+                                             "<ul style=\"list-style-type:disc\">\n" +
+                                             "  <li>Egypt</li>\n" +
+                                             "  <li>Cameroon</li>\n" +
+                                             "  <li>Ghana</li>\n" +
+                                             "  <li>Nigeria</li>\n" +
+                                             "  <li>Ivory Coast</li>\n" +
+                                             "  <li>Congo</li>\n" +
+                                             "  <li>Zambia</li>\n" +
+                                             "  <li>Tunisia</li>\n" +
+                                             "  <li>Sudan</li>\n" +
+                                             "  <li>Algeria</li>\n" +
+                                             "  <li>Ethiopia</li>\n" +
+                                             "</ul>  ",
+                                             "icon": "marker"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates": [30.8, 26.8]
+                                         },
+                                         "properties": {
+                                             "title": "2012",
+                                             "description": "<strong>Teams Participated</strong><br>" +
+                                                 "<ul style=\"list-style-type:disc\">\n" +
+                                                 "  <li>Egypt</li>\n" +
+                                                 "  <li>Cameroon</li>\n" +
+                                                 "  <li>Ghana</li>\n" +
+                                                 "  <li>Nigeria</li>\n" +
+                                                 "  <li>Ivory Coast</li>\n" +
+                                                 "  <li>Congo</li>\n" +
+                                                 "  <li>Zambia</li>\n" +
+                                                 "  <li>Tunisia</li>\n" +
+                                                 "  <li>Sudan</li>\n" +
+                                                 "  <li>Algeria</li>\n" +
+                                                 "  <li>Ethiopia</li>\n" +
+                                                 "</ul>  ",
+                                             "icon": "marker"
+                                         } },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 25.935126890006956,
+                                                 30.84777380291399
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Borg El Arab Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":   [
+                                                 29.758369077501584,
+                                                 30.023687937501023
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "30 June Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 31.911689390005108,
+                                                 24.79895671387085
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Al-Salam Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 27.165595639995757,
+                                                 26.443283194849144
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Bani Ebid Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 26.528388608780915,
+                                                 23.01124394694196
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Arab Contractors Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 25.561591733785605,
+                                                 29.08714097254297
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Mubarak International Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 30.83,
+                                                 22.56
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Cairo International Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 7.93952142122609,
+                                                 6.241317367729579
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Cairo International Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 9.433662046208156,
+                                                 8.0725595064238
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Abuja Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 6.445380796226715,
+                                                 5.279413979489107
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Lagos National Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 4.248,
+                                                 7.20
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Adokiye Amiesimaka Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 5.1270214212117935,
+                                                 9.9821101381675
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Muhammadu Dikko Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 7.8516307962252085,
+                                                 8.159569820141385
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Godswill Akpabio International Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":
+                                                  [
+                         11.191,
+                         7.985
+                     ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Jalingo City Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 9.609443296212646,
+                                                 9.635687531110207
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "U. J. Esuene Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 5.918037046211651,
+                                                 7.811416882033058
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Obafemi Awolowo Stadium",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 12.729560483736947,
+                                                 -0.11837278870399359
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Independence Stadium (Bakau)",
+                                             "icon": "stadium"
+                                         }
+                                     },
+                                     {
+                                         "type": "Feature",
+                                         "geometry": {
+                                             "type": "Point",
+                                             "coordinates":  [
+                                                 11.059638608731717,
+                                                 -1.7880044693074666
+                                             ]
+                                         },
+                                         "properties": {
+
+                                             "description": "Stade de Franceville",
+                                             "icon": "stadium"
+                                         }
+                                     }
+
+                                     ]
+                             }
+                         },
+                         "layout": {
+                             "icon-image": "{icon}-15",
+                             "text-field": "{title}",
+                             "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                             "text-offset": [0, 0.6],
+                             "text-anchor": "top"
+                         }
+                     });
+                 });
+
+                 // Create a popup
+                 var popup = new mapboxgl.Popup({
+                     closeButton: false,
+                     closeOnClick: false
+                 });
+                 map.on('mouseenter', 'points', function(e) {
+                     // Change the cursor style as a UI indicator.
+                     map.getCanvas().style.cursor = 'pointer';
+
+                     var coordinates = e.features[0].geometry.coordinates.slice();
+                     var description = e.features[0].properties.description;
+
+                     // Ensure that if the map is zoomed out such that multiple
+                     // copies of the feature are visible, the popup appears
+                     // over the copy being pointed to.
+                     while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                     }
+
+                     // Populate the popup and set its coordinates
+                     // based on the feature found.
+                     popup.setLngLat(coordinates)
+                         .setHTML(description)
+                         .addTo(map);
+                 });
+                map.on('mouseout', 'points', function() {
+                    map.getCanvas().style.cursor = '';
+                    popup.remove();
+                });
+
+
+             </script>
+
+         </div>
+
+
+</body>
+</html>

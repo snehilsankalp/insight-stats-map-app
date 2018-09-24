@@ -1,0 +1,137 @@
+a{
+    text-decoration: none;
+}
+.teams{
+
+	background:#ffffff;
+	margin: 1% 4% 2% 4%;
+	border-color: gray;
+	height:60px;
+	box-shadow:3px 3px 10px darkgray;
+    cursor: pointer;
+
+}
+.top{
+    width: 49.5% !important;
+    background: white;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    border-radius: 3%;
+
+}
+.select_team{
+
+	margin-left:10%;
+	background: #656C7E;
+	color:whitesmoke;
+}
+
+.logoimg{
+	width:181px;
+}
+
+h5{
+	margin-top:15px !important;
+}
+/*.navbar{*/
+	/*background: rgb(247, 247, 247);*/
+/*}*/
+/*.navbar-right{*/
+	/*margin:0.5%;*/
+	/*color: gray;*/
+/*}*/
+.sidepanel{
+	border-right: 1px solid gainsboro;	background: #2A2D33;
+	padding:10px 0 0 0 !important;
+    height:100vh;
+}
+.body{
+	margin: 0px;
+	margin-top:53px;
+	padding: 0px;
+	margin-right: opx
+}
+.li-menu{
+	color: #9E9FA1;
+	padding: 20px 20px 20px 25px;
+
+
+}
+.li-menu:hover{
+	color: #CBCDD2;
+}
+.effect:before{
+	content:'';
+	position: absolute;
+
+	margin-top:-15px;
+	left: 0px;
+	width: 0px;
+	height: 55px;
+	background: rgba(255,255,255,0.3);
+
+	transition: all 1s ease;
+}
+.effect:hover:before{
+
+	width:100%;
+
+
+}
+.fa-list{
+	padding-right:  5%;
+}
+.active{
+	background:#656C7E;
+	color: #ffffff !important;
+	margin-bottom: 1px;
+    margin-top:5px;
+}
+.desklink{
+	color:#9E9FA1;
+	text-decoration: none;
+
+
+}
+.desklink:hover{
+	color:#CBCDD2;
+	text-decoration: none;
+}
+
+.rightpanel{
+	background: rgb(247, 247, 247);
+	border-left: 1px solid gainsboro;
+	height: 100vh;
+    -webkit-box-shadow: -2px 0px 6px 0px rgba(232,229,232,1);
+-moz-box-shadow: -2px 0px 6px 0px rgba(232,229,232,1);
+box-shadow: -2px 0px 6px 0px rgba(232,229,232,1);
+}
+.pad-zero{padding: 0px;
+background: #F7F7F7;
+
+}
+.gray{
+	color: gray
+}
+
+
+.rightpanel{
+	padding:0%;
+}
+.div1r{
+	border-bottom: 1px solid gainsboro;
+	padding: 5%;
+}
+.graph{
+	width: 100%
+}
+.main{
+	background: rgb(247, 247, 247);
+}
+.main2{
+	background: white;
+	margin-bottom: 1%;
+    margin-top: 2%;
+}
+
