@@ -223,87 +223,14 @@ div.owl-prev, div.owl-next {
 
 }
 
-@media (max-width: 768px) {  /*****For mobile********/
 
-.pay{
-    background-color:#fff;
-}
 
-.socialicon{
-    color:#fff !important;
-}
-.cimg{
-	height: 200px;
-	width:100%;
-}
-.carousel-control{
-    height:200px;
-}
-.nav>li>a {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    padding: 5px 45px;
-}
-	.pro4{
-		padding: 7px
-	}
-	.displaypro{
-	padding:2%	
-	}
-	.displaycat{
-	    color: #23447a;
-		margin: 7% 3% 0% 3%;
-	}
-	.whitebox{
-	/*background: white;*/	
-	}
-	.quard{
-	border: 0.5px solid #efefef;
-	}
-	.itemcontainer{
-	padding:10px;
-	padding-bottom: 0px;background:white;
-	min-height:258px;
-}
-	.section{
-		margin-top:0%;
-			margin-bottom: 5%;
-	}
-	.clearfix{
-		clear: both;
-	}
-	.itemimgdiv{
-	padding: 0px	
-	}
-	.prod{
-	    	padding: 0px;
-		margin: 0px;
-		height:130px;	
-		width:auto;
-		max-width:100%;
-	}
-	.itemimg{
-	padding: 0px;
-		margin: 0px;
-		height:130px;	
-		width:80%;
-		max-width:100%;
-	}
-	.itemdescrip{
-	padding: 5px 0px;	
-	}
 	
    .secretm{
 	  display: none
 	}
 	
-	.nav2{
-		box-shadow:none;
-		margin-bottom: 0px;
-		padding: 0px;
-		    background: #fff;
-	}
+
 	.logoimg{
 	/*width:200px;*/
 	/*padding-top:0px;*/
@@ -312,13 +239,7 @@ div.owl-prev, div.owl-next {
     padding-top:0px;
     margin-top: -5px;
 	}
-	.navbar-brand{
-	padding-top:6px;
-	padding-left: 0px;	
-	}
-	.navbar-toggle{
-		margin-right: 0px
-	}
+
 	.usericon{
 		margin-top: 3.5%;
     /* margin-left: 8%; */
@@ -326,12 +247,7 @@ div.owl-prev, div.owl-next {
     margin-right: 8.5%;
 		
 	}
-	.fa-user-circle-o{
-		padding-left: 15%;
-	}
-	.carouseldiv{
-		height: 150px
-	}
+
 	.main{
 		margin: 0px;
 		padding: 0px
@@ -376,28 +292,7 @@ div.owl-prev, div.owl-next {
 	padding-left: 16px;
 	text-transform: lowercase;
 }
-.fa-heart-o{
-	float: right;
-	text-align:right;
-	width:30%;
-	
-}
-.fa-heart-o:hover{
-	float: right;
-	color:lightcoral;
-	
-}
-.fa-heart{
-	float: right;
-	text-align:right;
-	width:30%;
-		color:lightcoral;
-}
-.fa-heart:hover{
-	float: right;
-	
-	
-}
+
 a:hover{text-decoration: none}
 .pad-zero{padding: 0px;z-index:-1;}
 .btn-viewall{
@@ -421,27 +316,7 @@ a:hover{text-decoration: none}
 .productrating{
 	display: block;
 }
-.price{
-
-}
-.price::before,.strike::before{
-	content: "$";
-}
-.strike,strike{
-	color: gray;
-	display: inline;
-}
-
-
-.fa-star,.fa-star-half-o,.fa-star-o{
-	color: #fe6a00;
-}
-
-
-.itemimgdiv{
-	text-align: center
-}
-
+.
 
 .lev1{
     padding-left: 15px;
